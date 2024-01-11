@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AppleMarket" parent="Theme.Material3.DayNight.NoActionBar">
+        <!--<item name="colorPrimary">@color/my_light_primary</item>-->
+        <!--<item name="android:windowLightStatusBar">true</item>-->
+    </style>
+        <!--https://velog.io/@abc9985/AndroidstatusBar흰색으로-바뀌면서-아이콘-색상-바꾸기-->
+        <!--시스템 색상이 모두 강제된다.. 다이얼로그 선택 메시지도 보이지 않음-->
+
+
+    <style name="Base.Theme.TransparentStatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!--drawerlayout statusbar -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+    <style name="Base.Theme.TransparentStatusBarWhitefont" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!--drawerlayout statusbar -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+        <!--https://velog.io/@yujeong136/Android-status-bar-투명하게-만들기-drawer-layout-->
+
+
+
+    <style name="Theme.AppleMarket" parent="Base.Theme.AppleMarket" />
+</resources>
