@@ -12,8 +12,13 @@ class MyAdapter(val mainList: MutableList<MyItem>) : RecyclerView.Adapter<MyAdap
     interface ItemClick {
         fun onClick(view : View, position : Int)
     }
+    interface ItemLongClick {
+        fun onLongClick(view : View, position : Int)
+    }
 
     var itemClick : ItemClick? = null
+    var itemLongClick : ItemLongClick? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,6 +29,12 @@ class MyAdapter(val mainList: MutableList<MyItem>) : RecyclerView.Adapter<MyAdap
         holder.itemView.setOnClickListener {  //클릭이벤트추가부분
             itemClick?.onClick(it, position)
         }
+
+        holder.itemView.setOnLongClickListener() OnLongClickListener@{
+            itemLongClick?.onLongClick(it, position)
+            return@OnLongClickListener true
+        }
+
         holder.holderRecycleImg.setImageResource(mainList[position].recycleImg)
         holder.holderRecycleTitle.text = mainList[position].recycleTitle
         holder.holderRecycleLocation.text = mainList[position].recycleLocation
